@@ -6,6 +6,7 @@ import "./globals.css";
 import NuqsProvider from "@/providers/NuqsProvider";
 import TokenProvider from "@/providers/TokenProvider";
 import NextAuthProvider from "@/providers/NextAuthProvider";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <NuqsProvider>
             <NextAuthProvider>
               <TokenProvider>
+                <Navbar />
                 {children}
               </TokenProvider>
             </NextAuthProvider>

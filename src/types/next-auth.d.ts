@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { User } from "./user.ts";
 
 interface Payload extends User {
   accessToken: string;
