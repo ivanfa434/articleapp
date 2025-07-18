@@ -20,20 +20,25 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="bg-white border-b shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-blue-700">
-            BlogApp
+          <Link href="/" className="text-xl font-semibold text-blue-700">
+            ArticleApp
           </Link>
 
           <div className="flex items-center gap-4">
             {status === "loading" ? (
-              <div className="h-8 w-8 animate-pulse rounded-full bg-muted" />
+              <div className="h-8 w-8 animate-pulse rounded-full bg-gray-200" />
             ) : session ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 {session.user.role === "Admin" && (
-                  <Button variant="outline" size="sm" asChild>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-blue-700 text-blue-700 hover:bg-blue-50"
+                    asChild
+                  >
                     <Link href="/admin">
                       <Settings className="mr-2 h-4 w-4" />
                       Admin Panel
@@ -41,7 +46,12 @@ const Navbar = () => {
                   </Button>
                 )}
 
-                <Button variant="outline" size="sm" asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-blue-700 text-blue-700 hover:bg-blue-50"
+                  asChild
+                >
                   <Link href="/write">
                     <PenTool className="mr-2 h-4 w-4" />
                     Write
@@ -50,7 +60,11 @@ const Navbar = () => {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-blue-700 hover:bg-blue-50"
+                    >
                       <User className="mr-2 h-4 w-4" />
                       {session.user.username}
                     </Button>
@@ -72,10 +86,19 @@ const Navbar = () => {
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="sm" asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-blue-700 hover:bg-blue-50"
+                  asChild
+                >
                   <Link href="/login">Login</Link>
                 </Button>
-                <Button size="sm" className="bg-blue-700" asChild>
+                <Button
+                  size="sm"
+                  className="bg-blue-700 text-white hover:bg-blue-800"
+                  asChild
+                >
                   <Link href="/register">Register</Link>
                 </Button>
               </div>
