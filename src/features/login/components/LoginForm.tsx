@@ -24,7 +24,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import useLogin from "@/hooks/api/useLogin";
+import useLogin from "@/hooks/api/auth/useLogin";
 import { loginSchema } from "../schemas";
 
 type LoginFormData = z.infer<typeof loginSchema>;

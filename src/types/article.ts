@@ -9,6 +9,7 @@ export interface Article {
   categoryId: string;
   createdAt: string;
   updatedAt: string;
+  imageUrl: string;
   category: Category;
   user: User;
 }
