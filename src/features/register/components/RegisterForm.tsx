@@ -31,7 +31,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import useRegister from "@/hooks/api/useRegister";
+import useRegister from "@/hooks/api/auth/useRegister";
 import { RegisterSchema } from "../schema";
 
 type RegisterFormData = z.infer<typeof RegisterSchema>;
